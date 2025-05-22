@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Crop Circles - 3D Interactive Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            cursor: none;
+        }
+        
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            color: #00ff88;
+            font-size: 18px;
+            text-shadow: 0 0 10px #00ff88;
+        }
+        
+        #instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            color: #88ffff;
+            font-size: 14px;
+            text-shadow: 0 0 5px #88ffff;
+        }
+        
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #00ff88;
+            font-size: 24px;
+            text-shadow: 0 0 15px #00ff88;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="loading">Loading UFO Systems...</div>
+        <div id="ui">
+            <div>Crop Circles Created: <span id="circleCount">0</span></div>
+            <div>UFO Energy: <span id="energy">100</span>%</div>
+            <div>Altitude: <span id="altitude">0</span>m</div>
+        </div>
+        <div id="instructions">
+            WASD: Move UFO | Mouse: Look Around | SPACE: Create Crop Circle | SHIFT: Boost
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
